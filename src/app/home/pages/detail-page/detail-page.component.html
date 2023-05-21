@@ -1,0 +1,69 @@
+<div class="detail">
+  <div class="detail__grid">
+    <div class="detail__contenido-img">
+      <img class="detail__image" [src]="product.product.image" alt="">
+    </div>
+    <div class="detail__description">
+      <h2 class="detail__title">{{ product.product.name }}</h2>
+      <span class="detail__price">$ {{ product.product.price | number }}</span>
+
+      <p>Producto Disponible</p>
+
+      <div class="formulario">
+        <div class="formulario__campo formulario__campo--half">
+          <label for="color" class="formulario__label">Color: </label>
+          <select class="formulario__input" name="color" id="color">
+            <option value="" selected disabled>-- Selccione un Color --</option>
+            <option *ngFor="let color of product?.info?.colors" [value]="color">{{ color }}</option>
+          </select>
+        </div>
+
+
+        <div class="formulario__campo formulario__campo--half">
+          <label class="formulario__label" for="cantidad">Cantidad: </label>
+          <select class="formulario__input " name="cantidad" id="cantidad">
+            <option value="">1 Unidad</option>
+            <option value="">2 Unidad</option>
+            <option value="">3 Unidad</option>
+            <option value="">4 Unidad</option>
+            <option value="">5 Unidad</option>
+            <option value="">6 Unidad</option>
+            <option value="">Mas 6 Unidades</option>
+          </select>
+        </div>
+
+        <div class="formulario__campo formulario__campo--flex-row">
+          <input class="formulario__submit formulario__submit--pay" type="submit" value="Comprar ahora"
+            (click)="verificarAuth()" />
+          <input class="formulario__submit formulario__submit--add" type="submit" value="Agregar al carrito" />
+        </div>
+
+      </div>
+    </div>
+
+    <div class="characteristic">
+      <h3 class="characteristic__title">Descripción</h3>
+      <p class="characteristic__text">{{ product.info.description }}</p>
+
+      <div class="detail-product">
+        <h3 class="detail-product__title">Características del producto</h3>
+
+        <div class="characteristics">
+
+          <div *ngFor="let characteris of product.characteristics" class="characteristics__contenido">
+            <h3 class="characteristics__title">{{ characteris.title }}</h3>
+            <ul class="characteristics__detail">
+              <li *ngFor="let caracters of characteris.data" class="characteristics__item">
+                {{caracters.item}} <span class="characteristics__value">{{ caracters.value }}</span>
+              </li>
+              <li class="characteristics__item">
+                Modelo<span class="characteristics__value">6300 4G</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

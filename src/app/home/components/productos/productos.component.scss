@@ -1,0 +1,19 @@
+@use '../../../../mixins.scss' as m;
+
+.productos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.6rem;
+  place-content: center;
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+  }
+
+  @include m.desktop {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

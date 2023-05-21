@@ -1,0 +1,11 @@
+<div class="producto">
+  <img class="producto__imagen" [src]="productObj?.image" alt="Imagen Producto"
+    [routerLink]="['/detail', product?.uuid]">
+  <div class="producto__info">
+    <div class="producto__textos">
+      <p class="producto__price">$ {{productObj?.price | number }}</p>
+      <p class="producto__name">{{productObj?.name}}</p>
+    </div>
+    <span class="producto__icon-cart" (click)="addProduct(product)"></span>
+  </div>
+</div>

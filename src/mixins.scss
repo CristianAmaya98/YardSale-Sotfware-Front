@@ -1,0 +1,43 @@
+@use 'variables.scss' as v;
+
+/** MIXINS **/
+@mixin telefono {
+  @media (min-width: v.$telefono) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: v.$tablet) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: v.$desktop) {
+    @content;
+  }
+}
+
+@mixin boton($bgColor, $textColor, $borderColor) {
+  background-color: $bgColor;
+  border-radius: 0.8rem;
+  border: 0.1rem solid $borderColor;
+  color: $textColor;
+  width: 100%;
+  cursor: pointer;
+  font-size: v.$md;
+  font-weight: bold;
+  height: 5rem;
+}
+
+@mixin bgImage($url) {
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin grid($column, $separador) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  gap: $separador;
+}

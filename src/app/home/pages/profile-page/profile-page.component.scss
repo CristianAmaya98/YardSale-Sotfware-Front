@@ -1,0 +1,39 @@
+.profile {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  &__img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10rem;
+  }
+
+  &__name {
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+  }
+}
+
+.settings {
+  width: 70%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 2rem;
+
+  &__item {
+    background-color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid red;
+    }
+  }
+}

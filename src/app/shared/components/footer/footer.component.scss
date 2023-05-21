@@ -1,0 +1,16 @@
+@use '../../../../variables.scss' as v;
+
+.footer {
+  width: 100%;
+  border-top: 1px solid v.$very-light-pink;
+  padding: 1.5rem;
+  position: absolute;
+  bottom: 0;
+
+  &__copyright {
+    text-align: center;
+    color: v.$black;
+    font-size: v.$sm;
+    margin: 0;
+  }
+}

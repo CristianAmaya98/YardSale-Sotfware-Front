@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="header__contenido header__container">
+    <img src="./assets/icons/icon_menu.svg" alt="logo Menu" class="header__menu" />
+
+    <div class="header__nav">
+      <a routerLink="/">
+        <img id="logo" src="./assets/logos/logo_yard_sale.svg" alt="logo" class="header__logo" />
+      </a>
+    </div>
+
+    <div class="header__shopping">
+      <ul class="shopping">
+        <li id="shopping-cart" class="shopping__cart-icon" routerLink="shopping">
+          <span id="counter-shopping" class="shopping__cart-counter">{{counterShopping}}</span>
+        </li>
+        <li id="email-shopping" class="shopping__email" routerLink="profile">
+          <span class="shopping__email-icon">
+            <img *ngIf="image" [src]="image" alt="">
+          </span>
+          <span class="shopping__email-texto">{{email}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,125 @@
+@use '../../../../variables.scss' as v;
+@use '../../../../mixins.scss' as m;
+
+.header {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid v.$very-light-pink;
+  background-color: v.$white;
+  position: relative;
+
+  &__menu {
+    display: none;
+  }
+
+  &__contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav,
+  &__shopping {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+  }
+
+  &__logo {
+    transition-property: transform;
+    transition-duration: 0.3s;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.navegacion {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &__enlace {
+    border: 1px solid transparent;
+    padding: 1rem 1rem;
+    border-radius: 0.8rem;
+
+    &:hover {
+      border: 1px solid v.$hospital-green;
+      color: v.$hospital-green;
+    }
+  }
+}
+
+.shopping {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+
+  &__email {
+    color: v.$black;
+    font-size: v.$sm;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid v.$very-light-pink;
+    border-radius: 1rem;
+    gap: 1rem;
+    margin: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__email-icon {
+    overflow: hidden;
+    background-color: darken($color: v.$hospital-green, $amount: 20%);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: v.$white;
+    border-radius: 10rem;
+    border: none;
+  }
+
+  &__email-texto {
+    display: none;
+    @include m.tablet {
+      display: block;
+    }
+  }
+
+  &__cart-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    @include m.bgImage('assets/icons/icon_shopping_cart.svg');
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__cart-counter {
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: -0.9rem;
+    top: -0.9rem;
+    background-color: v.$hospital-green;
+    border-radius: 50%;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: v.$sm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: v.$white;
+  }
+}

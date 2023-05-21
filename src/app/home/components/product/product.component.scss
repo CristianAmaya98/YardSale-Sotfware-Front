@@ -1,0 +1,66 @@
+@use '../../../../variables.scss' as v;
+@use '../../../../mixins.scss' as m;
+
+.producto {
+  width: 100%;
+  min-width: 17rem;
+  max-width: 24rem;
+  margin: 0 auto;
+  transition-property: transform;
+  transition-duration: 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+    border-radius: 2rem;
+  }
+
+  &__imagen {
+    width: 24rem;
+    height: 24rem;
+    border-radius: 2rem;
+    object-fit: cover;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  &__icon-cart {
+    max-width: 3.6rem;
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+    @include m.bgImage('assets/icons/bt_add_to_cart.svg');
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__textos {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  &__name,
+  &__price {
+    margin: 0;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: v.$md;
+  }
+
+  &__name {
+    font-size: v.$sm;
+  }
+}

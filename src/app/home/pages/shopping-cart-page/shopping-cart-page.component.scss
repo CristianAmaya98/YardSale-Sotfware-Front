@@ -1,0 +1,165 @@
+@use '../../../../mixins.scss' as m;
+@use '../../../../variables.scss' as v;
+
+.shopping-my-cart {
+  display: flex;
+  flex-direction: column;
+  @include m.desktop {
+    padding: 2rem 4rem;
+  }
+
+  &__title-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 3.4rem;
+    font-weight: bold;
+  }
+
+  &__grid {
+    padding: 3rem 0;
+    width: 100%;
+    margin: 0 auto;
+
+    @include m.desktop {
+      width: 90%;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include m.desktop {
+      display: block;
+    }
+  }
+
+  &__title-menu {
+    font-weight: bold;
+    font-size: 3rem;
+    color: darken($color: v.$very-light-pink, $amount: 40%);
+    border-bottom: 1px solid v.$very-light-pink;
+  }
+
+  &__contenido-menu {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__item-menu {
+    padding: 1rem 0;
+    background-color: v.$white;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition-property: border;
+    transition-duration: 0.3s;
+
+    &:hover {
+      border: 1px solid v.$hospital-green;
+      cursor: pointer;
+    }
+  }
+
+  &__pay-contenido {
+    @include m.desktop {
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__pay {
+    @include m.desktop {
+      grid-column: 5 / 7;
+    }
+  }
+}
+
+.shoppings {
+  display: flex;
+  flex-direction: column;
+  column-gap: 2rem;
+  max-height: 65vh;
+  overflow: hidden;
+
+  &-body {
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  @include m.desktop {
+    max-height: 70vh;
+  }
+}
+
+.shopping-cart {
+  display: grid;
+  max-height: 90px;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 1.6rem;
+  margin-bottom: 1.4rem;
+  align-items: center;
+  background-color: v.$white;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+
+  &__imagen {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 4rem;
+    object-fit: cover;
+  }
+
+  &__title {
+    color: v.$very-light-pink;
+  }
+
+  &__price {
+    font-size: v.$md;
+    font-weight: bold;
+  }
+}
+
+.order {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.6rem;
+  align-items: center;
+  background-color: v.$text-input-field;
+  margin-bottom: 2.4rem;
+  border-radius: 0.8rem;
+  padding: 2rem 2.4rem;
+  border: 1px solid v.$hospital-green;
+
+  &__title {
+    font-size: v.$md;
+    font-weight: bold;
+  }
+
+  &__price {
+    text-align: end;
+    font-weight: bold;
+  }
+}
+
+.buttons-pay {
+  display: flex;
+  gap: 2rem;
+}
+
+.button {
+  display: block;
+  @include m.boton(v.$hospital-green, v.$white, transparent);
+  width: 100%;
+
+  &--primary {
+    @include m.boton(v.$white, v.$hospital-green, v.$hospital-green);
+  }
+}
